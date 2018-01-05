@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="antbuild">
+
+    <path id="common">
+      <pathelement location="localserver/lib/servlet-api.jar"/>
+      <pathelement location="localserver/mysql-connector-java-5.1.45-bin.jar"/>
+    </path>
+    <target name="clean">
+        <delete dir="localserver/webapps/ROOT/WEB-INF/classes/com"/>
+    </target>
+    <target name="compile" depends="clean">
+      <javac srcdir="src/main/java" destdir="localserver/webapps/ROOT/WEB-INF/classes" failonerror="true" fork="true">
+          <classpath refid="common"/>
+      </javac>
+    </target>
+</project>
