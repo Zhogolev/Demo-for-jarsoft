@@ -3,6 +3,7 @@
 ##Инициализация 
 
 В файле localserver\webapps\ROOT\WEB-INF\web.xml
+<body>
 ...
 <filter>
         <filter-name>ConnectionFilter</filter-name>
@@ -37,7 +38,8 @@
         </init-param>
     </filter>
     ...
-    
+ </body>
+ 
 ##Компиляция
     
     2) Выполнить команду ant build.xml из корня приложения.
