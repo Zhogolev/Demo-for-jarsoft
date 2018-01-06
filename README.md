@@ -3,10 +3,12 @@
 ##Инициализация 
 
 В файле localserver\webapps\ROOT\WEB-INF\web.xml
-<body>
-...
-<filter>
-        <filter-name>ConnectionFilter</filter-name>
+
+
+..
+     <filter>       
+     
+     <filter-name>ConnectionFilter</filter-name>
         <filter-class>jarsoft.filters.ConnectionFilter</filter-class>
         <init-param>
             <param-name>CREATE_SAMPLE_DATA</param-name>  //Изменить значение на Y, для создание демо данных
@@ -36,18 +38,20 @@
             <param-name>URL_CONNECTION</param-name>  //Mysql , драйвер уже добавлен в приложение
             <param-value>jdbc:mysql://</param-value>
         </init-param>
-    </filter>
-    ...
- </body>
+    </filter> ...
+
  
 ##Компиляция
     
-    2) Выполнить команду ant build.xml из корня приложения.
+    Выполнить команду ant build.xml из корня приложения.
     
    
 ##Запуск приложения
     
-    3) Выпонить команду catalina.(bat/sh) run из .\localserver\bin 
+    Выпонить команду catalina.(bat/sh) run из .\localserver\bin 
     
     
-    
+##Перейти в браузер
+
+   localhost:8080
+ 
