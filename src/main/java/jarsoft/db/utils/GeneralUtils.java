@@ -91,43 +91,50 @@ public class GeneralUtils {
 
     public static void addSampleShopData(Connection connection) throws SQLException {
 
+
         String sqlInsertNomenclatureQuery = "INSERT INTO nomenclature (name, price) VALUES(?,?)";
 
         PreparedStatement preparedStatement = connection.prepareStatement(sqlInsertNomenclatureQuery);
 
-        preparedStatement.setString(1, "Samsong GLAXY 3");
-        preparedStatement.setFloat(2, (float) 1000.00);
-        preparedStatement.executeUpdate();
+        try {
 
-        preparedStatement.setString(1, "Samsong GLAXY 4");
-        preparedStatement.setFloat(2, (float) 13000.40);
-        preparedStatement.executeUpdate();
+            preparedStatement.setString(1, "Samsong GLAXY 3");
+            preparedStatement.setFloat(2, (float) 1000.00);
+            preparedStatement.executeUpdate();
 
-        preparedStatement.setString(1, "Samsong GLAXY 5");
-        preparedStatement.setFloat(2, (float) 17000.30);
-        preparedStatement.executeUpdate();
+            preparedStatement.setString(1, "Samsong GLAXY 4");
+            preparedStatement.setFloat(2, (float) 13000.40);
+            preparedStatement.executeUpdate();
 
-        preparedStatement.setString(1, "Samsong GLAXY 6");
-        preparedStatement.setFloat(2, (float) 22000.77);
-        preparedStatement.executeUpdate();
+            preparedStatement.setString(1, "Samsong GLAXY 5");
+            preparedStatement.setFloat(2, (float) 17000.30);
+            preparedStatement.executeUpdate();
 
-        preparedStatement.setString(1, "Samsong GLAXY 8");
-        preparedStatement.setFloat(2, (float) 80000.00);
-        preparedStatement.executeUpdate();
+            preparedStatement.setString(1, "Samsong GLAXY 6");
+            preparedStatement.setFloat(2, (float) 22000.77);
+            preparedStatement.executeUpdate();
 
-        preparedStatement.setString(1, "myPhone 4");
-        preparedStatement.setFloat(2, (float) 8000.20);
-        preparedStatement.executeUpdate();
+            preparedStatement.setString(1, "Samsong GLAXY 8");
+            preparedStatement.setFloat(2, (float) 80000.00);
+            preparedStatement.executeUpdate();
 
-        preparedStatement.setString(1, "myPhone SEL");
-        preparedStatement.setFloat(2, (float) 19000.51);
-        preparedStatement.executeUpdate();
+            preparedStatement.setString(1, "myPhone 4");
+            preparedStatement.setFloat(2, (float) 8000.20);
+            preparedStatement.executeUpdate();
 
-        preparedStatement.setString(1, "myPhone 12");
-        preparedStatement.setFloat(2, (float) 129000.99);
-        preparedStatement.executeUpdate();
+            preparedStatement.setString(1, "myPhone SEL");
+            preparedStatement.setFloat(2, (float) 19000.51);
+            preparedStatement.executeUpdate();
 
-        preparedStatement.close();
+            preparedStatement.setString(1, "myPhone 12");
+            preparedStatement.setFloat(2, (float) 129000.99);
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            /*this exception meen that sample data already exists */
+        }finally {
+            preparedStatement.close();
+        }
 
     }
 }
