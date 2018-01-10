@@ -46,7 +46,32 @@ The remaining parameters are not required to change.
         </init-param>
     </filter> ...
     
-##Start server
+    
+    ###Tomcat user list
+    
+      "\localserver\conf\tomcat-user.xml"
+       <tomcat-users ...> 
+          <role rolename="manager"/>
+	     <role rolename="manager-script"/>
+	     <role rolename="manager-gui"/>
+     	<user username="admin1" password="admin1" roles="manager,manager-gui,manager-script"/>
+         </tomcat-users>  
+         
+     ###Maven server users
+     
+     {Maven-home}/conf/settings.xml
+          <servers...>
+               ....
+               <!-- Need to be added-->
+               <server>
+                <id>TomcatServer</id>
+                <username>admin1</username>
+                <password>admin1</password>
+              </server>
+              ....
+           </servers>
+    
+##Start server    
     
     From {project root}\localserver\bin 
   
@@ -67,7 +92,7 @@ The remaining parameters are not required to change.
      
 ##In browser 
 
-Once server started and project deployd you can find the app in browser.
+Once server started and project deployed you can find the app in browser.
 
      
 
