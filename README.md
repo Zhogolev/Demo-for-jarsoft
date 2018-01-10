@@ -45,27 +45,60 @@ The remaining parameters are not required to change.
             <param-value>jdbc:mysql://</param-value>
         </init-param>
     </filter> ...
-
- 
-##Сompilation
     
-    From {project root} in commandline:
     
-     ant compile
+    ###Tomcat user list
     
-##Start server
+      "\localserver\conf\tomcat-user.xml"
+       <tomcat-users ...> 
+          <role rolename="manager"/>
+	     <role rolename="manager-script"/>
+	     <role rolename="manager-gui"/>
+     	<user username="admin1" password="admin1" roles="manager,manager-gui,manager-script"/>
+         </tomcat-users>  
+         
+     ###Maven server users
+     
+     {Maven-home}/conf/settings.xml
+          <servers...>
+               ....
+               <!-- Need to be added-->
+               <server>
+                <id>TomcatServer</id>
+                <username>admin1</username>
+                <password>admin1</password>
+              </server>
+              ....
+           </servers>
+    
+##Start server    
     
     From {project root}\localserver\bin 
   
      catalina.(bat/sh) run 
   
      it start the server on 8080 port with namelocal host
-    
+     
+ 
+ ##Deploing application 
+   
+     From {project root} in command line 
+     
+     mvn tomcat7:deploy
+     
+##Undeploy
+
+    mvn tomcat7:undeploy
+     
 ##In browser 
 
-Once server started you can find the app in browser.
+Once server started and project deployed you can find the app in browser.
 
-   url: <localhost:8080>
+     
+
+   url: <http://localhost:8080/demo>
+ 
+ 
  
 
 my email: <konszhog@gmail.com>
