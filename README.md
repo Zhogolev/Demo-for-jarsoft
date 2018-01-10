@@ -45,13 +45,6 @@ The remaining parameters are not required to change.
             <param-value>jdbc:mysql://</param-value>
         </init-param>
     </filter> ...
-
- 
-##Сompilation
-    
-    From {project root} in commandline:
-    
-     ant compile
     
 ##Start server
     
@@ -60,12 +53,27 @@ The remaining parameters are not required to change.
      catalina.(bat/sh) run 
   
      it start the server on 8080 port with namelocal host
-    
+     
+ 
+ ##Deploing application 
+   
+     From {project root} in command line 
+     
+     mvn tomcat7:deploy
+     
+##Undeploy
+
+    mvn tomcat7:undeploy
+     
 ##In browser 
 
-Once server started you can find the app in browser.
+Once server started and project deployd you can find the app in browser.
 
-   url: <localhost:8080>
+     
+
+   url: <http://localhost:8080/demo>
+ 
+ 
  
 
 my email: <konszhog@gmail.com>
