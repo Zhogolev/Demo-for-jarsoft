@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="demo-basket:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="Demo-shop-basket.war">
+      <element id="artifact" artifact-name="demo-basket:war exploded" />
+    </root>
+  </artifact>
+</component>

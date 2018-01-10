@@ -68,9 +68,6 @@ public class GeneralUtils {
 
         executePS(connection, sqlCreateQuery);
 
-        //sqlCreateQuery = "CREATE UNIQUE INDEX name_UNIQUE ON nomenclature (name)";
-
-        //executePS(connection, sqlCreateQuery);
     }
 
     private static void createUsersTable(Connection connection) throws SQLException {
@@ -83,9 +80,6 @@ public class GeneralUtils {
 
         executePS(connection, sqlCreateQuery);
 
-        //sqlCreateQuery = "CREATE UNIQUE INDEX stringid_UNIQUE ON users (stringid)";
-
-        //executePS(connection, sqlCreateQuery);
 
     }
 

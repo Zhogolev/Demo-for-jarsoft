@@ -44,6 +44,7 @@ public class BasketDoOrder extends HttpServlet {
                         name,
                         connection);
                 //getting user basket by session id
+                //for send it in jsp file as param.
                 List<Basket> basketList = BasketUtil.getFromBasket(sessionID , connection);
                 //adding to orders
                 for (Basket item: basketList) {
@@ -53,17 +54,17 @@ public class BasketDoOrder extends HttpServlet {
                 //clear basket from order
                 BasketUtil.deliteFromBasketAllNodesBySessionId(sessionID, connection);
                 //send user to shop
-                response.sendRedirect("/shop");
+                response.sendRedirect("../shop");
 
             } catch (SQLException | ClassNotFoundException e) {
                 e.printStackTrace();
-                RequestDispatcher requestDispatcher = request.getRequestDispatcher("/error");
+                RequestDispatcher requestDispatcher = request.getRequestDispatcher("../error");
                 request.setAttribute("error","Base error");
                 requestDispatcher.forward(request,response);
             }
         }else{
 
-            response.sendRedirect("/basket");
+            response.sendRedirect("../basket");
 
         }
 

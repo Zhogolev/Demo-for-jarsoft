@@ -31,6 +31,6 @@ public class BasketAddServlet extends HttpServlet {
 
             } catch (SQLException | ClassNotFoundException e) {  e.printStackTrace(); }
         }
-        response.sendRedirect(backpage == null? "/basket" : "/" + backpage);
+        response.sendRedirect(backpage == null? "./basket" : "./" + backpage);
     }
 }
